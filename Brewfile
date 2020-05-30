@@ -2,6 +2,8 @@
 brew "stow"
 brew "duti"
 
+brew "zplug"
+
 # cli tools
 brew "fzf"
 brew "ripgrep"

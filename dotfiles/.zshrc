@@ -1,11 +1,6 @@
-[[ -d ~/.zplug ]] || {
-	git clone https://github.com/zplug/zplug ~/.zplug
-	source ~/.zplug/init.zsh && zplug update --self
-}
+export ZPLUG_HOME=/usr/local/opt/zplug
 
-source ~/.zplug/init.zsh
-
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+source $ZPLUG_HOME/init.zsh
 
 # zsh plugins
 # Start sensibly!
@@ -21,3 +16,14 @@ zplug "plugins/pyenv", from:oh-my-zsh
 # Nice prompt
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
