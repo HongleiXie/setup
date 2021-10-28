@@ -16,13 +16,13 @@ fi
 brew bundle install --verbose --no-lock --file install/Brewfile
 
 # rehash shims in case we've just upgraded pyenv via brew
-pyenv rehash
+# pyenv rehash
 
 # install fzf key bindings & fuzzy completion and update zshrc
 "$(brew --prefix)"/opt/fzf/install --all --no-bash
 
 # golang tools
-go get -u github.com/go-delve/delve/cmd/dlv
+# go get -u github.com/go-delve/delve/cmd/dlv
 
 # for formatting markdown, json and javscript
 npm install -g prettier
