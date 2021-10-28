@@ -14,7 +14,7 @@ brew "jq"
 # dev tools
 brew "shellcheck"
 cask "beyond-compare"
-
+brew "duti"
 
 # for vscode symbol generation
 brew "ctags"
