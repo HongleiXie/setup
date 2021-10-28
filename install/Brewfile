@@ -6,6 +6,7 @@ brew "automake"
 brew "libtool"
 
 # cli tools
+brew "fzf"
 brew "wget"
 brew "jq"
 
