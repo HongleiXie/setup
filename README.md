@@ -6,9 +6,25 @@ Contains installation scripts, .zshrc and dotfiles for a minimal, fast (120ms st
 
 Run `./install.sh` to install and configure a fresh mac. Run it again to upgrade to the latest versions.
 
+## Oh-My-Zsh
 
-## bench
+Install:
 
+```bash
+export REMOTE=https://gitee.com/imirror/ohmyzsh.git
+sh -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh/tools/install.sh)"
 ```
-hyperfine --warmup 3 'zsh -i -c exit;'
+
+```bash
+git clone https://gitee.com/imirror/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://gitee.com/imirror/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+
+Adding the following in the `~/.zshrc`
+
+```bash
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
+
+Now `source ~/.zshrc` to make it effective.
