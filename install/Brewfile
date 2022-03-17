@@ -33,4 +33,4 @@ brew "Schniz/tap/fnm"
 cask "iterm2"
 cask "slack" unless system "[[ -d '/Applications/Slack.app' ]]"
 cask "visual-studio-code"
-
+cask "keepingyouawake"
